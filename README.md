@@ -1,3 +1,28 @@
+# Bootstrap SCSS Modernization Toolkit
+
+## `fleeble.scss` — SCSS Library
+
+A Bootstrap-like variables + mixins library. Successfully migrated from `@import` to `@use`/`@forward` with all deprecated global functions (`lighten`, `darken`, `ceil`, `floor`, `fade_in`, `adjust-hue`, etc.) replaced by modern `color.*` and `math.*` equivalents.
+
+```bash
+yarn build:css   # compiles fleeble.scss → fleeble.css
+```
+
+---
+
+## Bootstrap 3.4.1 Conversion Test
+
+`convert-sass-functions.rb` was tested against the real [bootstrap-sass](https://github.com/twbs/bootstrap-sass) 3.4.1 SCSS source:
+
+- **123 replacements** across **18 files**
+- `color.adjust` for all color functions (lighten/darken/adjust-hue/fade_in)
+- `math.*` for ceil/floor/percentage
+- Zero remaining deprecated global calls after conversion
+- Handles nested functions (e.g. `darken(adjust-hue($color, -10), 5%)` → both outer and inner converted)
+- No false positives in comments or already-namespaced calls
+
+---
+
 # Scripts
 
 ## `find-unused-mixins.rb` and `find-unused-vars.rb`
