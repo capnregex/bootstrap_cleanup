@@ -1,4 +1,6 @@
 @use "sass:math";
+@use "../variables" as *;
+@use "clearfix" as *;
 // Grid system
 //
 // Generate semantic grid columns with these mixins.
