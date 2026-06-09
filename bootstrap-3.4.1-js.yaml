@@ -1,0 +1,336 @@
+---
+:version: 3.4.1
+:source: https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.js
+:plugins:
+- :name: Affix
+  :type: constructor
+  :params:
+  - element
+  - options
+  :methods:
+  - :name: getState
+    :params:
+    - scrollHeight
+    - height
+    - offsetTop
+    - offsetBottom
+  - :name: getPinnedOffset
+    :params: []
+  - :name: checkPositionWithEventLoop
+    :params: []
+  - :name: checkPosition
+    :params: []
+- :name: Alert
+  :type: constructor
+  :params:
+  - el
+  :methods:
+  - :name: close
+    :params:
+    - e
+- :name: Button
+  :type: constructor
+  :params:
+  - element
+  - options
+  :methods:
+  - :name: setState
+    :params:
+    - state
+  - :name: toggle
+    :params: []
+- :name: Carousel
+  :type: constructor
+  :params:
+  - element
+  - options
+  :methods:
+  - :name: keydown
+    :params:
+    - e
+  - :name: cycle
+    :params:
+    - e
+  - :name: getItemIndex
+    :params:
+    - item
+  - :name: getItemForDirection
+    :params:
+    - direction
+    - active
+  - :name: to
+    :params:
+    - pos
+  - :name: pause
+    :params:
+    - e
+  - :name: next
+    :params: []
+  - :name: prev
+    :params: []
+  - :name: slide
+    :params:
+    - type
+    - next
+- :name: Collapse
+  :type: constructor
+  :params:
+  - element
+  - options
+  :methods:
+  - :name: dimension
+    :params: []
+  - :name: show
+    :params: []
+  - :name: hide
+    :params: []
+  - :name: toggle
+    :params: []
+  - :name: getParent
+    :params: []
+  - :name: addAriaAndCollapsedClass
+    :params:
+    - "$element"
+    - "$trigger"
+- :name: Dropdown
+  :type: constructor
+  :params:
+  - element
+  :methods:
+  - :name: toggle
+    :params:
+    - e
+  - :name: keydown
+    :params:
+    - e
+- :name: Modal
+  :type: constructor
+  :params:
+  - element
+  - options
+  :methods:
+  - :name: toggle
+    :params:
+    - _relatedTarget
+  - :name: show
+    :params:
+    - _relatedTarget
+  - :name: hide
+    :params:
+    - e
+  - :name: enforceFocus
+    :params: []
+  - :name: escape
+    :params: []
+  - :name: resize
+    :params: []
+  - :name: hideModal
+    :params: []
+  - :name: removeBackdrop
+    :params: []
+  - :name: backdrop
+    :params:
+    - callback
+  - :name: handleUpdate
+    :params: []
+  - :name: adjustDialog
+    :params: []
+  - :name: resetAdjustments
+    :params: []
+  - :name: checkScrollbar
+    :params: []
+  - :name: setScrollbar
+    :params: []
+  - :name: resetScrollbar
+    :params: []
+  - :name: measureScrollbar
+    :params: []
+- :name: Popover
+  :type: constructor
+  :params:
+  - element
+  - options
+  :methods:
+  - :name: getDefaults
+    :params: []
+  - :name: setContent
+    :params: []
+  - :name: hasContent
+    :params: []
+  - :name: getContent
+    :params: []
+  - :name: arrow
+    :params: []
+- :name: ScrollSpy
+  :type: constructor
+  :params:
+  - element
+  - options
+  :methods:
+  - :name: getScrollHeight
+    :params: []
+  - :name: refresh
+    :params: []
+  - :name: process
+    :params: []
+  - :name: activate
+    :params:
+    - target
+  - :name: clear
+    :params: []
+- :name: Tab
+  :type: constructor
+  :params:
+  - element
+  :methods:
+  - :name: show
+    :params: []
+  - :name: activate
+    :params:
+    - element
+    - container
+    - callback
+- :name: Tooltip
+  :type: constructor
+  :params:
+  - element
+  - options
+  :methods:
+  - :name: init
+    :params:
+    - type
+    - element
+    - options
+  - :name: getDefaults
+    :params: []
+  - :name: getOptions
+    :params:
+    - options
+  - :name: getDelegateOptions
+    :params: []
+  - :name: enter
+    :params:
+    - obj
+  - :name: isInStateTrue
+    :params: []
+  - :name: leave
+    :params:
+    - obj
+  - :name: show
+    :params: []
+  - :name: applyPlacement
+    :params:
+    - offset
+    - placement
+  - :name: replaceArrow
+    :params:
+    - delta
+    - dimension
+    - isVertical
+  - :name: setContent
+    :params: []
+  - :name: hide
+    :params:
+    - callback
+  - :name: fixTitle
+    :params: []
+  - :name: hasContent
+    :params: []
+  - :name: getPosition
+    :params:
+    - "$element"
+  - :name: getCalculatedOffset
+    :params:
+    - placement
+    - pos
+    - actualWidth
+    - actualHeight
+  - :name: getViewportAdjustedDelta
+    :params:
+    - placement
+    - pos
+    - actualWidth
+    - actualHeight
+  - :name: getTitle
+    :params: []
+  - :name: getUID
+    :params:
+    - prefix
+  - :name: tip
+    :params: []
+  - :name: arrow
+    :params: []
+  - :name: enable
+    :params: []
+  - :name: disable
+    :params: []
+  - :name: toggleEnabled
+    :params: []
+  - :name: toggle
+    :params:
+    - e
+  - :name: destroy
+    :params: []
+  - :name: sanitizeHtml
+    :params:
+    - unsafeHtml
+- :name: emulateTransitionEnd
+  :type: jquery_plugin
+  :params:
+  - duration
+  :methods: []
+:data_api_events:
+- :type: data_api_event
+  :event: click
+  :plugin: affix
+- :type: data_api_event
+  :event: scroll
+  :plugin: affix
+- :type: data_api_event
+  :event: click
+  :plugin: alert
+- :type: data_api_event
+  :event: click
+  :plugin: button
+- :type: data_api_event
+  :event: focus
+  :plugin: button
+- :type: data_api_event
+  :event: click
+  :plugin: carousel
+- :type: data_api_event
+  :event: keydown
+  :plugin: carousel
+- :type: data_api_event
+  :event: mouseenter
+  :plugin: carousel
+- :type: data_api_event
+  :event: mouseleave
+  :plugin: carousel
+- :type: data_api_event
+  :event: click
+  :plugin: collapse
+- :type: data_api_event
+  :event: click
+  :plugin: dropdown
+- :type: data_api_event
+  :event: keydown
+  :plugin: dropdown
+- :type: data_api_event
+  :event: click
+  :plugin: modal
+- :type: data_api_event
+  :event: focusin
+  :plugin: modal
+- :type: data_api_event
+  :event: resize
+  :plugin: modal
+- :type: data_api_event
+  :event: load
+  :plugin: scrollspy
+- :type: data_api_event
+  :event: scroll
+  :plugin: scrollspy
+- :type: data_api_event
+  :event: click
+  :plugin: tab
