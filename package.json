@@ -1,4 +1,10 @@
 {
-  "name": "bootstrap",
-  "packageManager": "yarn@4.16.0"
+  "name": "boot_strap",
+  "packageManager": "yarn@4.16.0",
+  "scripts": {
+    "build:css": "sass fleeble.scss fleeble.css"
+  },
+  "dependencies": {
+    "sass": "^1.100.0"
+  }
 }
