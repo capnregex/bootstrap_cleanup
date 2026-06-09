@@ -1,0 +1,271 @@
+---
+:count: 89
+:total: 99
+:mixins:
+- :name: alert-variant
+  :defined_in:
+  - fleeble/mixins/_alerts.scss
+- :name: animation
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: animation-delay
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: animation-direction
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: animation-duration
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: animation-fill-mode
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: animation-iteration-count
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: animation-name
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: animation-timing-function
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: backface-visibility
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: bg-variant
+  :defined_in:
+  - fleeble/mixins/_background-variant.scss
+- :name: border-bottom-radius
+  :defined_in:
+  - fleeble/mixins/_border-radius.scss
+- :name: border-top-radius
+  :defined_in:
+  - fleeble/mixins/_border-radius.scss
+- :name: box-sizing
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: button-size
+  :defined_in:
+  - fleeble/mixins/_buttons.scss
+- :name: button-variant
+  :defined_in:
+  - fleeble/mixins/_buttons.scss
+- :name: center-block
+  :defined_in:
+  - fleeble/mixins/_center-block.scss
+- :name: container-fixed
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: content-columns
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: form-control-focus
+  :defined_in:
+  - fleeble/mixins/_forms.scss
+- :name: form-control-validation
+  :defined_in:
+  - fleeble/mixins/_forms.scss
+- :name: gradient-directional
+  :defined_in:
+  - fleeble/mixins/_gradients.scss
+- :name: gradient-horizontal
+  :defined_in:
+  - fleeble/mixins/_gradients.scss
+- :name: gradient-horizontal-three-colors
+  :defined_in:
+  - fleeble/mixins/_gradients.scss
+- :name: gradient-radial
+  :defined_in:
+  - fleeble/mixins/_gradients.scss
+- :name: gradient-vertical
+  :defined_in:
+  - fleeble/mixins/_gradients.scss
+- :name: gradient-vertical-three-colors
+  :defined_in:
+  - fleeble/mixins/_gradients.scss
+- :name: hyphens
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: img-responsive
+  :defined_in:
+  - fleeble/mixins/_image.scss
+- :name: img-retina
+  :defined_in:
+  - fleeble/mixins/_image.scss
+- :name: input-size
+  :defined_in:
+  - fleeble/mixins/_forms.scss
+- :name: label-variant
+  :defined_in:
+  - fleeble/mixins/_labels.scss
+- :name: list-group-item-variant
+  :defined_in:
+  - fleeble/mixins/_list-group.scss
+- :name: make-grid
+  :defined_in:
+  - fleeble/mixins/_grid-framework.scss
+- :name: make-grid-columns
+  :defined_in:
+  - fleeble/mixins/_grid-framework.scss
+- :name: make-lg-column
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-lg-column-offset
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-lg-column-pull
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-lg-column-push
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-md-column
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-md-column-offset
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-md-column-pull
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-md-column-push
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-row
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-sm-column
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-sm-column-offset
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-sm-column-pull
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-sm-column-push
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-xs-column
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-xs-column-offset
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-xs-column-pull
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: make-xs-column-push
+  :defined_in:
+  - fleeble/mixins/_grid.scss
+- :name: nav-divider
+  :defined_in:
+  - fleeble/mixins/_nav-divider.scss
+- :name: navbar-vertical-align
+  :defined_in:
+  - fleeble/mixins/_nav-vertical-align.scss
+- :name: opacity
+  :defined_in:
+  - fleeble/mixins/_opacity.scss
+- :name: pagination-size
+  :defined_in:
+  - fleeble/mixins/_pagination.scss
+- :name: panel-variant
+  :defined_in:
+  - fleeble/mixins/_panels.scss
+- :name: perspective
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: perspective-origin
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: placeholder
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: progress-bar-variant
+  :defined_in:
+  - fleeble/mixins/_progress-bar.scss
+- :name: reset-filter
+  :defined_in:
+  - fleeble/mixins/_reset-filter.scss
+- :name: reset-text
+  :defined_in:
+  - fleeble/mixins/_reset-text.scss
+- :name: resizable
+  :defined_in:
+  - fleeble/mixins/_resize.scss
+- :name: responsive-invisibility
+  :defined_in:
+  - fleeble/mixins/_responsive-visibility.scss
+- :name: responsive-visibility
+  :defined_in:
+  - fleeble/mixins/_responsive-visibility.scss
+- :name: rotate
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: rotateX
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: rotateY
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: scale
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: scaleX
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: scaleY
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: skew
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: square
+  :defined_in:
+  - fleeble/mixins/_size.scss
+- :name: tab-focus
+  :defined_in:
+  - fleeble/mixins/_tab-focus.scss
+- :name: table-row-variant
+  :defined_in:
+  - fleeble/mixins/_table-row.scss
+- :name: text-emphasis-variant
+  :defined_in:
+  - fleeble/mixins/_text-emphasis.scss
+- :name: text-hide
+  :defined_in:
+  - fleeble/mixins/_hide-text.scss
+- :name: text-overflow
+  :defined_in:
+  - fleeble/mixins/_text-overflow.scss
+- :name: transform-origin
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: transition
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: transition-delay
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: transition-duration
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: transition-property
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: transition-timing-function
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: transition-transform
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: translate
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: translate3d
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss
+- :name: user-select
+  :defined_in:
+  - fleeble/mixins/_vendor-prefixes.scss

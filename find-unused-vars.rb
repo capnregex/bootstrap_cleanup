@@ -1,10 +1,14 @@
 #!/usr/bin/env ruby
 
 require "set"
+require "yaml"
+require "fileutils"
+
+USED_YAML   = File.join(__dir__, "tmp", "used-vars.yaml")
+UNUSED_YAML = File.join(__dir__, "tmp", "unused-vars.yaml")
 
 files = Dir.glob("**/*.scss")
 
-# Pass 1: collect all defined variable names with their source file and line
 definitions = {}
 files.each do |file|
   File.readlines(file).each_with_index do |line, idx|
@@ -14,8 +18,6 @@ files.each do |file|
   end
 end
 
-# Pass 2: for each defined variable, find references on lines
-# other than its own definition line
 used_vars = Set.new
 files.each do |file|
   lines = File.readlines(file)
@@ -32,9 +34,20 @@ end
 
 unused = definitions.keys - used_vars.to_a
 
+FileUtils.mkdir_p(File.dirname(USED_YAML))
+
+used_data = used_vars.sort.map { |v| { name: v } }
+File.write(USED_YAML, { count: used_data.size, vars: used_data }.to_yaml)
+
+unused_data = unused.sort.map { |v| { name: v, defined_in: definitions[v] } }
+File.write(UNUSED_YAML, { count: unused_data.size, total: definitions.size, vars: unused_data }.to_yaml)
+
 if unused.empty?
   puts "All #{definitions.size} defined variables are in use."
 else
   puts "Unused variables (#{unused.size} of #{definitions.size}):"
   unused.sort.each { |v| puts "  $#{v}  (#{definitions[v].join(', ')})" }
 end
+
+puts "\nWrote used vars (#{used_data.size}) to #{USED_YAML}"
+puts "Wrote unused vars (#{unused_data.size}) to #{UNUSED_YAML}"
