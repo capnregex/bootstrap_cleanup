@@ -1,0 +1,65 @@
+// Test file for convert-sass-units.rb
+// Each line tests a specific correction case
+
+@use "sass:color";
+@use "sass:math";
+@use "sass:list";
+
+// color.adjust – saturation/lightness need %
+.foo {
+  // Unitless → add %
+  a: color.adjust(red, $saturation: 20);
+  a: color.adjust(red, $lightness: 10);
+  // Already has % → no change
+  a: color.adjust(red, $saturation: 20%);
+  a: color.adjust(red, $lightness: 10%);
+  // Alpha with % → strip %
+  a: color.adjust(red, $alpha: 50%);
+  // Alpha unitless → no change
+  a: color.adjust(red, $alpha: 0.5);
+}
+
+// color.change – same rules
+.bar {
+  a: color.change(red, $saturation: 30);
+  a: color.change(red, $lightness: 40);
+  a: color.change(red, $alpha: 75%);
+}
+
+// color.mix – weight needs %
+.baz {
+  a: color.mix(red, blue, 50);
+  a: color.mix(red, blue, $weight: 25);
+  // Already has %
+  a: color.mix(red, blue, 50%);
+}
+
+// color.invert – weight needs %
+.qux {
+  a: color.invert(red, 80);
+  a: color.invert(red, $weight: 60);
+}
+
+// math.random – strip units
+.quux {
+  a: math.random(100px);
+  a: math.random($limit: 50em);
+  // No unit → no change
+  a: math.random(100);
+}
+
+// list.nth / list.set-nth – strip units from index
+.corge {
+  a: list.nth($list, 2px);
+  a: list.set-nth($list, 3em, $value);
+  // No unit → no change
+  a: list.nth($list, 2);
+}
+
+// hsl / hsla – saturation/lightness need %
+.grault {
+  a: hsl(0, 100, 50);
+  a: hsla(0, 80, 40, 0.5);
+  // Already correct
+  a: hsl(0, 100%, 50%);
+}

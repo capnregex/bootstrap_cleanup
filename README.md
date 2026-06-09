@@ -84,3 +84,22 @@ Replaces deprecated Sass global function calls (`lighten`, `darken`, `ceil`, `fl
 ruby convert-sass-functions.rb          # rewrite files in place
 ruby convert-sass-functions.rb --dry-run  # preview changes only
 ```
+
+## `convert-sass-units.rb`
+
+Corrects function arguments affected by the [strict function units](https://sass-lang.com/documentation/breaking-changes/function-units/) breaking change. Fixes unitless/non-`%` saturation/lightness, `%` alpha values, unit-bearing `math.random()` limits and `list.nth()`/`list.set-nth()` indices, and missing `%` on `color.mix()`/`color.invert()` weights.
+
+| Correction | Example |
+|---|---|
+| `$saturation: N` → `$saturation: N%` | `color.adjust($c, $saturation: 20)` → `20%` |
+| `$lightness: N` → `$lightness: N%` | `color.adjust($c, $lightness: 10)` → `10%` |
+| `$alpha: N%` → `$alpha: 0.N` | `color.adjust($c, $alpha: 50%)` → `0.5` |
+| `$weight: N` → `$weight: N%` | `color.mix(a, b, 50)` → `50%` |
+| `math.random(Npx)` → `math.random(N)` | strips units from `$limit` |
+| `list.nth($l, Npx)` → `list.nth($l, N)` | strips units from `$n` |
+| `hsl(h, s, l)` → `hsl(h, s%, l%)` | adds `%` to sat/light |
+
+```bash
+ruby convert-sass-units.rb          # rewrite files in place
+ruby convert-sass-units.rb --dry-run  # preview changes only
+```
