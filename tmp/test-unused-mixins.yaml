@@ -1,0 +1,7 @@
+---
+:count: 1
+:total: 1
+:mixins:
+- :name: center-block
+  :defined_in:
+  - tmp/test-mixins/_center-block.scss
