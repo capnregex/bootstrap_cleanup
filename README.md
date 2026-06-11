@@ -34,7 +34,7 @@ Scan all `*.scss` files in the project for defined vs used Sass mixins/variables
 - `tmp/used-mixins.yaml` — list of used mixin names
 - `tmp/unused-mixins.yaml` — unused mixins with `defined_in` file
 - `tmp/used-vars.yaml` — list of used variable names
-- `tmp/unused-vars.yaml` — unused variables with `defined_in` file:line
+- `tmp/unused_variables.yaml` — unused variables with `defined_in` file:line
 
 ```bash
 ruby find-unused-mixins.rb

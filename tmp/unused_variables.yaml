@@ -1,1 +1,37 @@
-unused-vars.yaml
+---
+:count: 6
+:total: 395
+:vars:
+- :name: abbr-border-color
+  :defined_in:
+  - fleeble/_variables.scss:864
+  - tmp/bootstrap-sass/package/assets/stylesheets/bootstrap/_variables.scss:860
+  - tmp/test-remove-vars.scss:864
+  - tmp/test-variables.scss:864
+- :name: also-keep
+  :defined_in:
+  - tmp/test-vars-remove.scss:6
+- :name: font-family-serif
+  :defined_in:
+  - fleeble/_variables.scss:49
+  - tmp/bootstrap-sass/package/assets/stylesheets/bootstrap/_variables.scss:49
+  - tmp/test-remove-vars.scss:49
+  - tmp/test-variables.scss:49
+- :name: gray-darker
+  :defined_in:
+  - fleeble/_variables.scss:14
+  - tmp/bootstrap-sass/package/assets/stylesheets/bootstrap/_variables.scss:14
+  - tmp/test-remove-vars.scss:14
+  - tmp/test-variables.scss:14
+- :name: pager-active-bg
+  :defined_in:
+  - fleeble/_variables.scss:488
+  - tmp/bootstrap-sass/package/assets/stylesheets/bootstrap/_variables.scss:484
+  - tmp/test-remove-vars.scss:488
+  - tmp/test-variables.scss:488
+- :name: pager-active-color
+  :defined_in:
+  - fleeble/_variables.scss:489
+  - tmp/bootstrap-sass/package/assets/stylesheets/bootstrap/_variables.scss:485
+  - tmp/test-remove-vars.scss:489
+  - tmp/test-variables.scss:489

@@ -4,9 +4,8 @@ require "set"
 require "yaml"
 require "fileutils"
 
-USED_YAML              = File.join(__dir__, "tmp", "used-vars.yaml")
-UNUSED_YAML            = File.join(__dir__, "tmp", "unused-vars.yaml")
-UNUSED_VARIABLES_YAML  = File.join(__dir__, "tmp", "unused_variables.yaml")
+USED_YAML   = File.join(__dir__, "tmp", "used-vars.yaml")
+UNUSED_YAML = File.join(__dir__, "tmp", "unused_variables.yaml")
 
 files = Dir.glob("**/*.scss")
 
@@ -41,9 +40,7 @@ used_data = used_vars.sort.map { |v| { name: v } }
 File.write(USED_YAML, { count: used_data.size, vars: used_data }.to_yaml)
 
 unused_data = unused.sort.map { |v| { name: v, defined_in: definitions[v] } }
-unused_payload = { count: unused_data.size, total: definitions.size, vars: unused_data }
-File.write(UNUSED_YAML, unused_payload.to_yaml)
-File.write(UNUSED_VARIABLES_YAML, unused_payload.to_yaml)
+File.write(UNUSED_YAML, { count: unused_data.size, total: definitions.size, vars: unused_data }.to_yaml)
 
 if unused.empty?
   puts "All #{definitions.size} defined variables are in use."
@@ -53,4 +50,4 @@ else
 end
 
 puts "\nWrote used vars (#{used_data.size}) to #{USED_YAML}"
-puts "Wrote unused vars (#{unused_data.size}) to #{UNUSED_YAML} and #{UNUSED_VARIABLES_YAML}"
+puts "Wrote unused vars (#{unused_data.size}) to #{UNUSED_YAML}"
