@@ -1,0 +1,11 @@
+---
+:count: 2
+:total: 2
+:vars:
+- :name: remove-me
+  :defined_in:
+  - tmp/test-vars-remove.scss:5
+- :name: icon-font-path
+  :defined_in:
+  - tmp/test-vars-remove.scss:9
+  - tmp/test-vars-remove.scss:11

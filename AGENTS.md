@@ -1,3 +1,4 @@
 # Project conventions
 
-- Use `./tmp/` (project-relative, not `/tmp/`) for all temporary files during this session.
+- Do not use `/tmp/` for any temporary files.
+- Use `./tmp/` (project-relative) for all temporary files during this session.

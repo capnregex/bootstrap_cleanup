@@ -103,3 +103,19 @@ Corrects function arguments affected by the [strict function units](https://sass
 ruby convert-sass-units.rb          # rewrite files in place
 ruby convert-sass-units.rb --dry-run  # preview changes only
 ```
+
+## `convert-sass-imports.rb`
+
+Migrates `@import` rules to `@use`/`@forward` per the [@import deprecation](https://sass-lang.com/documentation/breaking-changes/import/). Operates in three phases:
+
+1. **Classify** each `.scss` file (aggregator, variable, mixin, or component)
+2. **Convert** `@import` → `@forward` in aggregator files, `@use "... as *"` elsewhere
+3. **Add** `@use` imports to leaf files based on `$variable`/`@include` references
+
+Tested against bootstrap-sass 3.4.1 (74 files, 73 imports converted, `@use` added to 33 leaf files).
+
+```bash
+ruby convert-sass-imports.rb             # rewrite files in place
+ruby convert-sass-imports.rb --dry-run   # preview changes only
+ruby convert-sass-imports.rb --verbose   # show detailed progress
+```
