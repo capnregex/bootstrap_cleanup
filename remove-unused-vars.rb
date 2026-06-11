@@ -28,13 +28,19 @@ unless File.exist?(options[:yaml])
   exit 1
 end
 
-unless File.exist?(target)
+target_path = File.expand_path(target)
+
+unless File.exist?(target_path)
   warn "Error: #{target} not found"
   exit 1
 end
 
-project_root = __dir__
-target_rel = Pathname.new(File.expand_path(target, project_root)).relative_path_from(Pathname.new(project_root)).to_s
+begin
+  target_rel = Pathname.new(target_path).cleanpath
+    .relative_path_from(Pathname.new(Dir.pwd).cleanpath).to_s
+rescue ArgumentError
+  target_rel = target_path
+end
 
 def locations_match?(defined_in, target_rel)
   defined_in == target_rel || defined_in.end_with?("/#{target_rel}")
@@ -203,7 +209,7 @@ def lines_to_delete(lines, vars_to_remove)
   to_delete
 end
 
-lines = File.readlines(target)
+lines = File.readlines(target_path)
 to_delete = lines_to_delete(lines, vars_to_remove)
 
 removed_vars = []
@@ -232,7 +238,7 @@ lines.each_with_index do |line, idx|
   new_content << line unless to_delete.include?(idx)
 end
 
-File.write(target, new_content)
+File.write(target_path, new_content)
 puts "Removed #{removed_vars.size} unused variables (#{to_delete.size} lines) from #{target_rel}:"
 removed_vars.first(20).each { |v| puts "  $#{v}" }
 puts "  ..." if removed_vars.size > 20
