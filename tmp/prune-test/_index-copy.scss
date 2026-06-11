@@ -1,0 +1,7 @@
+// Utilities
+@forward "mixins/clearfix";
+@forward "mixins/missing-mixin";
+@forward "mixins/another-missing" as missing-*;
+
+// Keep this comment
+$not-a-forward: 1;
