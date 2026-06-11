@@ -1,0 +1,18 @@
+//** Brand colors
+$brand-primary: #337ab7 !default;
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+
+//** Body
+$body-bg: #fff !default;
+$text-color: #333 !default;
+
+//** Icon path
+@if $bootstrap-sass-asset-helper {
+  $icon-font-path: "bootstrap/" !default;
+} @else {
+  $icon-font-path: "../fonts/bootstrap/" !default;
+}
+
+//** Only in defaults
+$defaults-only: 1 !default;
